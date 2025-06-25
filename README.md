@@ -1,4 +1,5 @@
 # API_Testing_Kata
+<<<<<<< HEAD
 API Framework
 Hotel Booking Rest API Testing using Rest Assured
 
@@ -23,3 +24,6 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
  
  3. Features Implemented:
  
+=======
+REST API Automation using RESTAssured
+>>>>>>> 6a0bfb7dd9d03116c9518046d1d63f05060cfd17
