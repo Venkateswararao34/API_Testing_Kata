@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "API_AUTOMATION" configfailurepolicy="continue" parallel="classes" thread-count="1">
+	<parameter name="environment" value="UAT"/>
+	<parameter name="reportName" value="API_REPORT"/>
+	<parameter name="reportAppend" value="TRUE"/>
+	<parameter name="modeOfExecution" value="LOCAL"/>
+	<parameter name="testCaseName" value="RESTApi"/>
+	<parameter name="language" value="EN"/>
+	<listners></listners>
+	<test name = "REST_API_AUTOMATION">
+		<classes>
+			<class name=""/>
+		</classes>
+	</test>
+</suite>
