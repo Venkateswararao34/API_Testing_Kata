@@ -84,7 +84,13 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
 
            •	Open your favourate IDE like Eclipse or intellij
 
-           •	Once proper mapping is completed, execute sample tests
+           •	Import as exiting maven project and perform maven clean, install, build and test
+
+           •	Once the Build is success, right on Testrunner class and Run as TestNg
+
+           •	Once the execution is completed, you can find the reports in below strcuture
+                  /Working directory/target/cucumber-reports
+   
 
 11. Reports
 
