@@ -14,16 +14,13 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
 
 2. Technology stack:
 
- a. REST API
- b. REST Assured 5.2.2
- c. Cucumber 7.22.2
- d. Maven 3.9.9
- e. TestNG 7.11
- f. Java 17
- g. Extent Report 
+     a. REST API
+     b. REST Assured 5.2.2
+     c. Cucumber 7.22.2
+     d. Maven 3.9.9
+     e. TestNG 7.11
+     f. Java 17
+     g. Extent Report 
  
  3. Features Implemented:
  
-=======
-REST API Automation using RESTAssured
->>>>>>> 6a0bfb7dd9d03116c9518046d1d63f05060cfd17
