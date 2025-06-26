@@ -11,7 +11,7 @@
 	<listners></listners>
 	<test name = "REST_API_AUTOMATION">
 		<classes>
-			<class name=""/>
+			<class name	=	"com.booking.api.restassured.testrunner.TestRunner"/>
 		</classes>
 	</test>
 </suite>
