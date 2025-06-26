@@ -96,10 +96,6 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
 
           •	Cucumber HTML reports are generated in target/cucumber-reports
     
-          •	JUnit reports are available in target/surefire-reports
-    
-          •	Transaction logs are available in target/logs/transactions
-    
           •	TestNG Reports are available in Report folder
 
 13. Common Issues encountered:
