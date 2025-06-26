@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[[ Reported ] INFOTest case runnning]]>
     </line>
     <line>
-      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+      <![CDATA[[ Reported ] FAILFailure Response, Response is null : ]]>
     </line>
     <line>
-      <![CDATA[[ Reported ] PASS{
-    "errors": [
-        "size must be between 11 and 21"
-    ]
-}]]>
-    </line>
-    <line>
-      <![CDATA[[ Reported ] FAILcNull Reposnse received ]]>
+      <![CDATA[[ Reported ] FAILNull Reposnse received]]>
     </line>
     <line>
       <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
@@ -28,7 +21,22 @@
 }]]>
     </line>
     <line>
-      <![CDATA[[ Reported ] FAILcNull Reposnse received ]]>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 405]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] PASS]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILcheckIn is incorrectly displayed : Expected : null, Recieved : ]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILcheckout is incorrectly displayed : Expected : null, Recieved : ]]>
     </line>
     <line>
       <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
@@ -39,6 +47,37 @@
         "size must be between 11 and 21"
     ]
 }]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 405]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] PASS]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILcheckIn is incorrectly displayed : Expected : null, Recieved : ]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILcheckout is incorrectly displayed : Expected : null, Recieved : ]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] PASS{
+    "errors": [
+        "size must be between 11 and 21"
+    ]
+}]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
     </line>
     <line>
       <![CDATA[[ Reported ] FAILFirst name is incorrectly displayed : Expected : null, Recieved : ]]>
@@ -76,6 +115,9 @@
         "size must be between 11 and 21"
     ]
 }]]>
+    </line>
+    <line>
+      <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
     </line>
     <line>
       <![CDATA[[ Reported ] FAILFirst name is incorrectly displayed : Expected : null, Recieved : ]]>
@@ -108,33 +150,55 @@
       <![CDATA[[ Reported ] PASSTEST PASSED]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-06-26T03:14:05 CEST" name="Default suite" finished-at="2025-06-26T03:14:10 CEST" duration-ms="4993">
+  <suite started-at="2025-06-26T04:20:04 CEST" name="Default suite" finished-at="2025-06-26T04:20:07 CEST" duration-ms="3200">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-26T03:14:05 CEST" name="Default test" finished-at="2025-06-26T03:14:10 CEST" duration-ms="4993">
+    <test started-at="2025-06-26T04:20:04 CEST" name="Default test" finished-at="2025-06-26T04:20:07 CEST" duration-ms="3200">
       <class name="com.booking.api.restassured.testrunner.TestRunner">
-        <test-method is-config="true" signature="globalSetup()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:05 CEST" name="globalSetup" finished-at="2025-06-26T03:14:05 CEST" duration-ms="232" status="PASS">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:04 CEST" name="globalSetup" finished-at="2025-06-26T04:20:04 CEST" duration-ms="166" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[ Reported ] INFOTest case runnning]]>
             </line>
           </reporter-output>
         </test-method> <!-- globalSetup -->
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:05 CEST" name="setUpClass" finished-at="2025-06-26T03:14:06 CEST" duration-ms="581" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:04 CEST" name="setUpClass" finished-at="2025-06-26T04:20:04 CEST" duration-ms="396" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5814b4fb]]>
+                <![CDATA[org.testng.TestRunner@6eb5b9e7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:06 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T03:14:08 CEST" duration-ms="2418" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:04 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T04:20:05 CEST" duration-ms="824" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Fetch Auth token details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Get Authentication token Details"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response, Response is null : ]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILNull Reposnse received]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:05 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T04:20:06 CEST" duration-ms="928" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -159,11 +223,26 @@
 }]]>
             </line>
             <line>
-              <![CDATA[[ Reported ] FAILcNull Reposnse received ]]>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 405]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] PASS]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILcheckIn is incorrectly displayed : Expected : null, Recieved : ]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILcheckout is incorrectly displayed : Expected : null, Recieved : ]]>
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:08 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T03:14:09 CEST" duration-ms="398" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:06 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T04:20:06 CEST" duration-ms="250" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -188,11 +267,26 @@
 }]]>
             </line>
             <line>
-              <![CDATA[[ Reported ] FAILcNull Reposnse received ]]>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 405]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] PASS]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILcheckIn is incorrectly displayed : Expected : null, Recieved : ]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILcheckout is incorrectly displayed : Expected : null, Recieved : ]]>
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:09 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T03:14:10 CEST" duration-ms="881" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:06 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T04:20:07 CEST" duration-ms="538" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -215,6 +309,9 @@
         "size must be between 11 and 21"
     ]
 }]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
             </line>
             <line>
               <![CDATA[[ Reported ] FAILFirst name is incorrectly displayed : Expected : null, Recieved : ]]>
@@ -245,7 +342,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:10 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T03:14:10 CEST" duration-ms="598" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:07 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-26T04:20:07 CEST" duration-ms="167" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -268,6 +365,9 @@
         "size must be between 11 and 21"
     ]
 }]]>
+            </line>
+            <line>
+              <![CDATA[[ Reported ] FAILFailure Response Recieved with Status code : 400]]>
             </line>
             <line>
               <![CDATA[[ Reported ] FAILFirst name is incorrectly displayed : Expected : null, Recieved : ]]>
@@ -298,11 +398,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:10 CEST" name="tearDownClass" finished-at="2025-06-26T03:14:10 CEST" duration-ms="65" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:07 CEST" name="tearDownClass" finished-at="2025-06-26T04:20:07 CEST" duration-ms="53" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="endGlobalSetup()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T03:14:10 CEST" name="endGlobalSetup" finished-at="2025-06-26T03:14:11 CEST" duration-ms="243" status="PASS">
+        <test-method is-config="true" signature="endGlobalSetup()[pri:0, instance:com.booking.api.restassured.testrunner.TestRunner@5f8e8a9d]" started-at="2025-06-26T04:20:07 CEST" name="endGlobalSetup" finished-at="2025-06-26T04:20:07 CEST" duration-ms="149" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[ Reported ] PASSTEST PASSED]]>

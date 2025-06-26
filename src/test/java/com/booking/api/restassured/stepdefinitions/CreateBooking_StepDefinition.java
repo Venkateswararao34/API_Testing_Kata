@@ -71,6 +71,8 @@ public class CreateBooking_StepDefinition {
 										            .build();
 				
 				testUtils.generateCreateBookingRequest(dataMap, randomId);
+				testUtils.setContext(dataMap);
+				testContext.setRoomId(randomId);
 				
 				Map<String, Object> bookingDates 	= 	new HashMap<>();
 				bookingDates.put("checkin", dataMap.get("checkin"));
@@ -114,11 +116,23 @@ public class CreateBooking_StepDefinition {
 	
 	@Then("Validate status code is {int}")
 	public void validateStatusCode(Integer code) {
-		int responseCode			=	testContext.getResponse().getStatusCode();
-		System.out.println("Received Status Code : "+responseCode);
-		if(code == responseCode) {
-			Report.setReportFailStep("Failure Response Recieved with Status code : "+responseCode);
-			Report.setReportPassStep(testContext.response.getBody().asPrettyString());
+		try {
+			if(testContext.getResponse() != null) {
+				int responseCode			=	testContext.getResponse().getStatusCode();
+				System.out.println("Received Status Code : "+responseCode);
+				if(code == responseCode) {
+					Report.setReportPassStep("Success Response Recieved with Status code : "+responseCode);
+					Report.setReportPassStep(testContext.response.getBody().asPrettyString());
+				}else {
+					Report.setReportFailStep("Failure Response Recieved with Status code : "+responseCode);
+				}
+			}else {
+				Report.setReportFailStep("Failure Response, Response is null : ");
+			}
+		}catch(NullPointerException npe) {
+			
+		}catch(Exception e) {
+			
 		}
 	}
 	

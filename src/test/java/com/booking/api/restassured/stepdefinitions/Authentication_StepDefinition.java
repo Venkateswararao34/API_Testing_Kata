@@ -3,16 +3,11 @@ package com.booking.api.restassured.stepdefinitions;
 import static io.restassured.RestAssured.given;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 import com.booking.api.restassured.config.Config;
 import com.booking.api.restassured.config.LoadEnvironmentProperties;
 import com.booking.api.restassured.engine.Reporter;
-import com.booking.api.restassured.payload.CreateBookingRequestPayload;
 
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,10 +15,8 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.path.json.exception.JsonPathException;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public class BookingSummary_StepDefinition {
+public class Authentication_StepDefinition {
 	public TestContext testContext 					=	new TestContext();
 	public TestUtils testUtils						=	new TestUtils();
 	public Config config							=	new Config();
@@ -35,29 +28,21 @@ public class BookingSummary_StepDefinition {
 	 * This step definition get the api name from the Feature file
 	 * 
 	 */
-	@Given("User should able to fetch booking summary API {string}")
-	public void AssignEndPoint(String apiName) {
-		try {
-			testContext.setContext("apiName", apiName);
-			testContext.setContext("basePath", config.getAPIResourceEndPointURL(apiName, ""));
-		}catch(NullPointerException npe) {
-			npe.printStackTrace();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	@Then("User gets the room id from Create Booking api")
+	
+	@When("User should send auth details from property file")
 	public void GetAndSetRoomId() {
 		try {
-			testContext.setContext("roomid", testContext.getContext("roomid"));
-			processBookingSummary();
+			String username				=	LoadEnvironmentProperties.EnvironmentMap.get("BASIC_AUTH_USERNAME");
+			String password				=	LoadEnvironmentProperties.EnvironmentMap.get("BASIC_AUTH_PASSWORD");
+			processAuthenticationrequest(username, password);
 		}catch(NullPointerException npe) {
 			npe.printStackTrace();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	private void processBookingSummary() {
+	
+	private void processAuthenticationrequest(String username, String password) {
 		try {
 			LoadEnvironmentProperties loadProperties=	new LoadEnvironmentProperties();
 			Reporter Report							=	new Reporter();
@@ -71,11 +56,16 @@ public class BookingSummary_StepDefinition {
 			
 			System.out.println("Here is the room id : "+roomid);
 			System.out.println("mPA : "+testContext.getRoomId());
+			
+			HashMap<String,String> AUTH_MAP					=	new HashMap<String,String>();
+			AUTH_MAP.put("username", username);
+			AUTH_MAP.put("password", password);
+			
 
 			Response rsp 						= 	given(requestSpec)
 													.log().all()
-													.queryParam("roomid", roomid)
-													.when().get(testContext.getContext("basePath"));
+													.body(AUTH_MAP)
+													.when().post(testContext.getContext("basePath"));
 
 			testContext.setResponse(rsp);
 
@@ -93,35 +83,24 @@ public class BookingSummary_StepDefinition {
 			e.printStackTrace();
 		}
 	}
-	
-	@Then("Response should match with {string} and {string}")
-	public void validateCheckinAndCheckoutDates(String checkIn, String checkOut) {
+	@Then("Validate token details")
+	public void validateCheckinAndCheckoutDates() {
 		try {
-			Response response 				= 	testContext.getResponse();
-			//String responseBody 			= 	response.asString();
+			Response response 			= 	testContext.getResponse();
 			if(response != null) {
-				String checkin				=	"";
-				String checkout				=	"";
+				String token				=	testUtils.getJsonValue(response, "token");
 				
-				try {
-					checkin					=	testUtils.getJsonValue(response, "checkin");
-					checkout				=	testUtils.getJsonValue(response, "checkout");
-				}catch(JsonPathException jpe) {
-				}
-				if(checkin.trim().equalsIgnoreCase(checkIn)) {
-					Report.setReportFailStep("checkIn validated successfully : "+checkin);
+				if(token != null && token.trim().length() != 0) {
+					Report.setReportFailStep("token validated successfully : "+token);
 				}else {
-					Report.setReportFailStep("checkIn is incorrectly displayed : Expected : "+testContext.getContext("checkin")+", Recieved : "+checkin);
+					Report.setReportFailStep("token is incorrectly displayed : Expected :  Minimum length of 10 , Recieved : "+token);
 				}
 				
-				if(checkOut.trim().equalsIgnoreCase(checkout)) {
-					Report.setReportFailStep("checkout validated successfully : "+checkOut);
-				}else {
-					Report.setReportFailStep("checkout is incorrectly displayed : Expected : "+testContext.getContext("checkout")+", Recieved : "+checkout);
-				}
 			}else {
-				Report.setReportFailStep("Null Reposnse received ");
+				Report.setReportFailStep("Null Reposnse received");
 			}
+		}catch(JsonPathException jpe) {
+			jpe.printStackTrace();
 		}catch(NullPointerException npe) {
 			npe.printStackTrace();
 		}catch(Exception e) {

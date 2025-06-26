@@ -13,9 +13,9 @@ public class TestContext {
 	@Setter
 	public Map<String,String> context;
 	
-	@Getter
-	@Setter
-	public int roomId;
+	
+	public static int roomId;
+	public static String token;
 	
 	@Getter
 	@Setter
@@ -59,6 +59,16 @@ public class TestContext {
     public void setResponse(Response response) {
         this.response = response;
     }
-    
-    
+    public void setRoomId(int roomId) {
+    	this.roomId	=	roomId;
+    }
+    public int getRoomId() {
+    	return roomId;
+    }
+    public void setToken(String token) {
+    	this.token	=	token;
+    }
+    public String getToken() {
+    	return token;
+    }
 }

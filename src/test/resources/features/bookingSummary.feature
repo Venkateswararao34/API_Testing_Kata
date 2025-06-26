@@ -1,7 +1,7 @@
 #Author: Venkateswararao Machavarapu
 #Description : booling.feature file
 #Version: 1.0
-#Date: 24/06/2025
+#Date: 25/06/2025
 
 @bookingSummary
 Feature: Get Booking Summary Details
@@ -16,6 +16,7 @@ Feature: Get Booking Summary Details
     
     Then Validate status code is 200
     Given User should able to fetch booking summary API "GetBookingSummaryAPI"
+    Then User gets the room id from Create Booking api
     Then Validate status code is 200
     And Response should match with "<checkin>" and "<checkout>"
 

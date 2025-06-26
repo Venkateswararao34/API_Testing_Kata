@@ -132,7 +132,7 @@ public class Config {
 				requireEndPoint			=	"/api/booking";
 				break;
 			case GetBookingSummaryAPI:
-				requireEndPoint			=	"/api/booking/summary";
+				requireEndPoint			=	"/api/booking/summary/";
 				break;
 			case GetByRoomIdAPI:
 				requireEndPoint			=	"/api/booking/"+id;
