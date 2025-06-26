@@ -42,6 +42,10 @@ public class Authentication_StepDefinition {
 		}
 	}
 	
+	/*
+	 * This Method is for Processing Authentication request using Post method
+	 * 
+	 */
 	private void processAuthenticationrequest(String username, String password) {
 		try {
 			LoadEnvironmentProperties loadProperties=	new LoadEnvironmentProperties();
@@ -54,10 +58,8 @@ public class Authentication_StepDefinition {
 
 			int roomid							=	testContext.getRoomId();
 			
-			System.out.println("Here is the room id : "+roomid);
-			System.out.println("mPA : "+testContext.getRoomId());
 			
-			HashMap<String,String> AUTH_MAP					=	new HashMap<String,String>();
+			HashMap<String,String> AUTH_MAP		=	new HashMap<String,String>();
 			AUTH_MAP.put("username", username);
 			AUTH_MAP.put("password", password);
 			

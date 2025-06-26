@@ -57,6 +57,10 @@ public class BookingSummary_StepDefinition {
 			e.printStackTrace();
 		}
 	}
+	/*
+	 * This Method is for Processing booking summary request payload using Get method
+	 * 
+	 */
 	private void processBookingSummary() {
 		try {
 			LoadEnvironmentProperties loadProperties=	new LoadEnvironmentProperties();
@@ -68,9 +72,7 @@ public class BookingSummary_StepDefinition {
 		            .build();
 
 			int roomid							=	testContext.getRoomId();
-			
-			System.out.println("Here is the room id : "+roomid);
-			System.out.println("mPA : "+testContext.getRoomId());
+		
 
 			Response rsp 						= 	given(requestSpec)
 													.log().all()

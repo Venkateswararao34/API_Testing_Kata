@@ -55,7 +55,10 @@ public class CreateBooking_StepDefinition {
 	public void createValidBooking(DataTable dataTable) {
 		processCreateBooking(dataTable);
 	}
-	
+	/*
+	 * This Method is for Processing Creating booking request payload using Post method
+	 * 
+	 */
 	public void processCreateBooking(DataTable dataTable) {
 		try {
 			List<Map<String, String>> dataList = dataTable.asMaps(String.class, String.class);
@@ -93,7 +96,6 @@ public class CreateBooking_StepDefinition {
 														.when().post(testContext.getContext("basePath"));
 
 				testContext.setResponse(rsp);
-				System.out.println("Received Status Code : "+rsp.getStatusCode());
 				if(rsp.getStatusCode() == 200) {
 					Report.setReportPassStep("Success Response Recieved with Status code : 200");
 					Report.setReportPassStep(rsp.getBody().asString());
@@ -119,7 +121,6 @@ public class CreateBooking_StepDefinition {
 		try {
 			if(testContext.getResponse() != null) {
 				int responseCode			=	testContext.getResponse().getStatusCode();
-				System.out.println("Received Status Code : "+responseCode);
 				if(code == responseCode) {
 					Report.setReportPassStep("Success Response Recieved with Status code : "+responseCode);
 					Report.setReportPassStep(testContext.response.getBody().asPrettyString());

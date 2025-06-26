@@ -10,3 +10,5 @@ bin/
 # maven project related ignore files and directories
 .mvn/
 target/
+/Report/
+Report/
