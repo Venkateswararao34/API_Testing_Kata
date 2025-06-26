@@ -73,6 +73,19 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
 
            •	Once proper mapping is completed, execute sample tests
 
+        Steps to Execute:
+           •	Install git in your local machine
+   
+           •	Create folder at your desired location
+
+           •	Open Git bash and navigate to location where folder is created
+
+           •	Use git clone command to pull the code from git repository to local
+
+           •	Open your favourate IDE like Eclipse or intellij
+
+           •	Once proper mapping is completed, execute sample tests
+
 11. Reports
 
           •	Cucumber HTML reports are generated in target/cucumber-reports
@@ -81,7 +94,7 @@ Booking Swagger Spec: https://automationintesting.online/booking/swagger-ui/inde
     
           •	Transaction logs are available in target/logs/transactions
     
-          •	Curl logs for request are available in target/logs/curlRequests
+          •	TestNG Reports are available in Report folder
 
 13. Common Issues encountered:
 
