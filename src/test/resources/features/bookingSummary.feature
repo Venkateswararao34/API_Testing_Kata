@@ -22,5 +22,5 @@ Feature: Get Booking Summary Details
 
 		Examples:
 		| firstname 			| lastname 		| depositpaid | email 									| phone 		| checkin 		| checkout 		|
-		| Venkateswararao | Machavarapu | true 				| venkatesh.m@yahoo.com 	| 020000001 | 2025-07-24 	| 2025-07-29 	|
-		| Anusha 					| Machavarapu | true 				| anusha.m@gmail.com 			| 020000002 | 2025-07-24 	| 2025-07-29 	|
+		| Venkateswararao | Machavarapu | true 				| venkatesh.m@yahoo.com 	| 20000001123 | 2025-07-24 	| 2025-07-29 	|
+		| Anusha 					| Machavarapu | true 				| anusha.m@gmail.com 			| 20000002123 | 2025-07-24 	| 2025-07-29 	|

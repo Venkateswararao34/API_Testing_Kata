@@ -10,6 +10,8 @@ import java.util.Random;
 import com.booking.api.restassured.config.Config;
 import com.booking.api.restassured.config.LoadEnvironmentProperties;
 import com.booking.api.restassured.engine.Reporter;
+import com.booking.api.restassured.engine.TestContext;
+import com.booking.api.restassured.engine.TestUtils;
 import com.booking.api.restassured.payload.CreateBookingRequestPayload;
 
 import io.cucumber.datatable.DataTable;
@@ -24,9 +26,9 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class BookingSummary_StepDefinition {
-	public TestContext testContext 					=	new TestContext();
-	public TestUtils testUtils						=	new TestUtils();
-	public Config config							=	new Config();
+	public static TestContext testContext 			=	new TestContext();
+	public static TestUtils testUtils				=	new TestUtils();
+	public static Config config						=	new Config();
 	
 	LoadEnvironmentProperties loadProperties		=	new LoadEnvironmentProperties();
 	Reporter Report									=	new Reporter();
@@ -77,7 +79,7 @@ public class BookingSummary_StepDefinition {
 			Response rsp 						= 	given(requestSpec)
 													.log().all()
 													.queryParam("roomid", roomid)
-													.when().get(testContext.getContext("basePath"));
+													.when().get(testContext.getBasepath());
 
 			testContext.setResponse(rsp);
 

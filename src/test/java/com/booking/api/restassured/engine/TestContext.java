@@ -1,4 +1,4 @@
-package com.booking.api.restassured.stepdefinitions;
+package com.booking.api.restassured.engine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,17 +11,17 @@ import lombok.Setter;
 public class TestContext {
 	@Getter
 	@Setter
-	public Map<String,String> context;
+	public static Map<String,String> context;
 	
 	
 	public static int roomId;
 	public static String token;
-	
+	public static String basepath;
 	@Getter
 	@Setter
 	public int bookingId;
 	
-	public Response response;
+	public static Response response;
 	
 	/*
 	 * 
@@ -70,5 +70,11 @@ public class TestContext {
     }
     public String getToken() {
     	return token;
+    }
+    public void setBasepath(String path) {
+    	this.basepath	=	path;
+    }
+    public String getBasepath() {
+    	return basepath;
     }
 }

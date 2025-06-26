@@ -7,6 +7,8 @@ import java.util.HashMap;
 import com.booking.api.restassured.config.Config;
 import com.booking.api.restassured.config.LoadEnvironmentProperties;
 import com.booking.api.restassured.engine.Reporter;
+import com.booking.api.restassured.engine.TestContext;
+import com.booking.api.restassured.engine.TestUtils;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -53,7 +55,7 @@ public class Authentication_StepDefinition {
 			RequestSpecification requestSpec = new RequestSpecBuilder()
 		            .setBaseUri(loadProperties.EnvironmentMap.get("APPLICATION_URL"))
 		            .addHeader("Content-Type", "application/json")
-		            .addHeader("Accept", "application/json")
+		            .addHeader("Accept", "*/*")
 		            .build();
 
 			int roomid							=	testContext.getRoomId();
@@ -66,8 +68,9 @@ public class Authentication_StepDefinition {
 
 			Response rsp 						= 	given(requestSpec)
 													.log().all()
+													.when()
 													.body(AUTH_MAP)
-													.when().post(testContext.getContext("basePath"));
+													.post(testContext.getBasepath());
 
 			testContext.setResponse(rsp);
 
@@ -89,6 +92,7 @@ public class Authentication_StepDefinition {
 	public void validateCheckinAndCheckoutDates() {
 		try {
 			Response response 			= 	testContext.getResponse();
+			
 			if(response != null) {
 				String token				=	testUtils.getJsonValue(response, "token");
 				

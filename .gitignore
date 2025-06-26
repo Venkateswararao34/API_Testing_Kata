@@ -12,3 +12,5 @@ bin/
 target/
 /Report/
 Report/
+test-output/
+/test-output/

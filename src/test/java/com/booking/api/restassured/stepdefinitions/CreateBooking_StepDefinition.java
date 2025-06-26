@@ -8,6 +8,8 @@ import java.util.Random;
 import com.booking.api.restassured.config.Config;
 import com.booking.api.restassured.config.LoadEnvironmentProperties;
 import com.booking.api.restassured.engine.Reporter;
+import com.booking.api.restassured.engine.TestContext;
+import com.booking.api.restassured.engine.TestUtils;
 import com.booking.api.restassured.payload.CreateBookingRequestPayload;
 
 import static io.restassured.RestAssured.given;
@@ -26,9 +28,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CreateBooking_StepDefinition {
 	
-	public TestContext testContext 					=	new TestContext();
-	public TestUtils testUtils						=	new TestUtils();
-	public Config config							=	new Config();
+	public static TestContext testContext 			=	new TestContext();
+	public static TestUtils testUtils				=	new TestUtils();
+	public static Config config						=	new Config();
 	LoadEnvironmentProperties loadProperties		=	new LoadEnvironmentProperties();
 	public Reporter Report							=	new Reporter();
 	
@@ -43,6 +45,8 @@ public class CreateBooking_StepDefinition {
 			testContext.setContext("apiName", apiName);
 			testContext.setContext("basePath", config.getAPIResourceEndPointURL(apiName, ""));
 			
+			testContext.setBasepath(config.getAPIResourceEndPointURL(apiName, ""));
+			;
 			System.out.println(testContext.context);
 		}catch(NullPointerException npe) {
 			npe.printStackTrace();
@@ -92,10 +96,12 @@ public class CreateBooking_StepDefinition {
 				
 				Response rsp 						= 	given(requestSpec)
 														.log().all()
+														.when()
 														.body(reqPayload)
-														.when().post(testContext.getContext("basePath"));
+														.post(testContext.getBasepath());
 
 				testContext.setResponse(rsp);
+				
 				if(rsp.getStatusCode() == 200) {
 					Report.setReportPassStep("Success Response Recieved with Status code : 200");
 					Report.setReportPassStep(rsp.getBody().asString());
@@ -107,6 +113,7 @@ public class CreateBooking_StepDefinition {
 					Report.setReportFailStep("Failure Response Recieved with Status code : "+rsp.getStatusCode());
 					Report.setReportPassStep(rsp.getBody().asPrettyString());
 				}
+				
 			}
 			//testContext.context.clear();
 		}catch(NullPointerException npe) {

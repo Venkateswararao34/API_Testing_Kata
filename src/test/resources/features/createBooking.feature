@@ -3,7 +3,7 @@
 #Version: 1.0
 #Date: 24/06/2025
 
-@createBooking 
+@createBooking
 Feature: Get Booking Summary Details
 
 	Background:
@@ -20,5 +20,5 @@ Feature: Get Booking Summary Details
 
 		Examples:
 		| firstname 			| lastname 		| depositpaid | email 									| phone 		| checkin 		| checkout 		|
-		| Venkateswararao | Machavarapu | true 				| venkatesh.m@yahoo.com 	| 020000001 | 2025-07-24 	| 2025-07-29 	|
-		| Anusha 					| Machavarapu | true 				| anusha.m@gmail.com 			| 020000002 | 2025-07-24 	| 2025-07-29 	|	  
+		| Venkateswararao | Machavarapu | true 				| venkatesh.m@yahoo.com 	| 2000000100123 | 2025-07-24 	| 2025-07-29 	|
+		| Anusha 					| Machavarapu | true 				| anusha.m@gmail.com 			| 2000000200223 | 2025-07-24 	| 2025-07-29 	|	  

@@ -1,6 +1,6 @@
 package com.booking.api.restassured.payload;
 
-import com.booking.api.restassured.stepdefinitions.TestContext;
+import com.booking.api.restassured.engine.TestContext;
 
 public class CreateBookingRequestPayload {
 	public int bookingid;

@@ -171,7 +171,6 @@ public class RestSetup{
 	}
 	public void InitializeSetup(String ENV) {
 		
-		System.out.println("Initiallizing setup");
 		//Object Declaration
 		Config config							=	new Config();
 		Logger log								=	new Logger();

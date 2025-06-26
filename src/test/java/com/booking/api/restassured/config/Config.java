@@ -126,7 +126,7 @@ public class Config {
 		try {
 			switch(apiName) {
 			case GetAuthTokenAPI:
-				requireEndPoint			=	 "/api/booking/auth/login";
+				requireEndPoint			=	 "/api/auth/login";
 				break;
 			case CreateBookingAPI:
 				requireEndPoint			=	"/api/booking";
